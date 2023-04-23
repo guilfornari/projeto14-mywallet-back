@@ -10,5 +10,7 @@ app.use(cors());
 app.use(signRouter);
 app.use(operationsRouter);
 
-const PORT = 5000;
-app.listen(PORT, () => console.log(`Server running on portal ${PORT}, berk!`));
+
+app.listen(process.env.PORT, () => {
+    console.log(`Server running on portal ${process.env.PORT}, berk!`);
+});
