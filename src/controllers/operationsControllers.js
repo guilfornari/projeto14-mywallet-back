@@ -14,7 +14,7 @@ export async function registerOps(req, res) {
         if (!session) return res.status(401).send("Token inexistente");
 
         await db.collection("operations").insertOne({ userId: session.userId, amount, description, type: opType, date: Date.now() });
-        return res.status(201).send("Entrada realizada");
+        return res.status(201).send("Operação registrada");
 
     } catch (error) {
         return res.status(500).send(error.message);
